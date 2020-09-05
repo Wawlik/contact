@@ -91,6 +91,15 @@ export default {
 		};
 	},
 	methods: {
+		async getConfirm(index, name) {
+			let a = await this.confirmDelete(index, name);
+			if (a) {
+				// upd list
+				this.getContacts();
+			} else {
+				// declined
+			}
+		},
 		enableContactAdd() {
 			this.newContact = {
 				name: "",

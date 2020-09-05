@@ -7,7 +7,7 @@ export default {
 				const txt = 'Вы уверены, что хотите удалить контакт ' + name + ' ?';
 				return window.UIkit.modal.confirm(txt).then(
 					function () {
-						return self.deleteNote(index, lskey);
+						return self.deleteContact(index, lskey);
 					},
 					function () {
 						return 0;
@@ -18,7 +18,7 @@ export default {
 				this.notifyErr('Что-то пошло не так. Возможны вы не в сети. Попробуйте перезагрузить страницу')
 			}
 		},
-		async deleteNote(index, lskey) {
+		async deleteContact(index, lskey) {
 			let data = null;
 			try {
 				const str = localStorage.getItem(lskey);
